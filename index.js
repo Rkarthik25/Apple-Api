@@ -4,7 +4,7 @@ const { connection } = require("mongoose")
 const db=require("./db")
 const app=express()
 
-const{ productRouter}=require("./route/ProductRoute")
+const {productRouter}=require("./route/ProductRoute")
 app.use(express.json())
 
 app.get("/",(req,res)=>{
