@@ -11,7 +11,7 @@ app.get("/",(req,res)=>{
     res.send("home page")
 })
 app.use("/product",productRouter)
-app.use("/:categoty",productRouter)
+app.use("/:category",productRouter)
 
 app.listen(1727,async()=>{
     try {
