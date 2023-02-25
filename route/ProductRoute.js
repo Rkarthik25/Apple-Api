@@ -1,5 +1,4 @@
 const express=require("express")
-const jwt=require("jsonwebtoken")
 const {ProductModel} =require("../model/ProductModel")
 
 const productRouter =express.Router()
@@ -7,6 +6,12 @@ const productRouter =express.Router()
 productRouter.get("/",async(req,res)=>{
     const product =await ProductModel.find()
     res.send(product)
+})
+productRouter.get("/:category",async(req,res)=>{
+    const params=req.params.category
+const product=await ProductModel.find({Category:params})
+res.send(product)
+
 })
 
 productRouter.post("/create",async(req,res)=>{
